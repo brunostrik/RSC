@@ -5,7 +5,7 @@ const sharp = require('sharp');
 
 async function main() {
   const root = path.join(__dirname, '..');
-  const srcPng = path.join(root, 'renderer', 'ifpr_logo.png');
+  const srcPng = path.join(root, 'renderer', 'rsc.png');
   const outDir = path.join(root, 'build');
   const outIco = path.join(outDir, 'icon.ico');
   const tmpPng = path.join(outDir, 'icon-256.png');

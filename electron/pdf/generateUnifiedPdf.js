@@ -150,7 +150,7 @@ async function generateUnifiedPdf({ criteria, formState, attachmentsByKey, readF
 
   // Logo on first page header
   try {
-    const logoPath = path.join(__dirname, '../../renderer/ifpr_logo.png');
+    const logoPath = path.join(__dirname, '../../renderer/rsc.png');
     const logoBytes = await readFile(logoPath);
     const logoImg = await pdfDoc.embedPng(logoBytes);
     const maxLogoH = 28;
