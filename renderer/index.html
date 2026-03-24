@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSC IFPR - Gerador de PDF</title>
+    <link rel="icon" href="./favicon.gif" type="image/gif" />
+    <link
+      href="./bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app" class="min-vh-100 bg-light">
+      <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <div class="container-fluid">
+          <div class="d-flex align-items-center gap-3">
+            <img src="./ifpr_logo.png" alt="IFPR" style="height: 40px; width: auto" />
+            <div class="d-flex flex-column">
+              <span class="navbar-brand mb-0 fw-bold">Sistema gerador de PDF para RSC do IFPR</span>
+              <small class="text-secondary">Pontuação + anexos → PDF único com links</small>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <button id="btnOpenProject" class="btn btn-outline-secondary btn-sm">Abrir projeto</button>
+            <button id="btnSaveProject" class="btn btn-outline-secondary btn-sm">Salvar projeto</button>
+            <button id="btnExport" class="btn btn-primary btn-sm">Gerar PDF</button>
+          </div>
+        </div>
+      </nav>
+
+      <main class="container-fluid py-3">
+        <div class="row g-3">
+          <div class="col-12 col-lg-8">
+            <div class="card shadow-sm">
+              <div class="card-header fw-semibold">Itens</div>
+              <div id="criteriaRoot" class="card-body"></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <div class="rsc-sticky-summary">
+              <div class="card shadow-sm">
+                <div class="card-header fw-semibold">Resumo</div>
+                <div id="summaryRoot" class="card-body"></div>
+                <div class="card-footer text-secondary small">
+                  Dica: anexe PDFs ou imagens (PNG/JPG). No PDF final, os links da tabela levam direto ao bloco de anexos de cada subitem.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <script src="./rscCriteria.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
+

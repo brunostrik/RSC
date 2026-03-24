@@ -1,0 +1,55 @@
+{
+  "name": "rsc-ifpr-pdf",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Bruno Strik <bruno.strik@ifpr.edu.br>",
+  "license": "MIT",
+  "description": "Ferramenta para gerar PDF de pontuação e anexos para o RSC do IFPR (Reconhecimento de Saberes e Competências)",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "electron .",
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "npm run build:icon && electron-builder --dir",
+    "dist": "npm run build:icon && electron-builder",
+    "build:icon": "node scripts/generate-icon.cjs"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "electron": "^31.2.1",
+    "electron-builder": "^24.13.3",
+    "png-to-ico": "^2.1.0",
+    "sharp": "^0.34.3"
+  },
+  "build": {
+    "appId": "br.com.ifpr.rsc",
+    "productName": "RSC IFPR",
+    "files": [
+      "electron/**",
+      "renderer/**",
+      "package.json",
+      "package-lock.json"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "RSC IFPR"
+    }
+  }
+}
+

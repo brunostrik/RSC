@@ -1,0 +1,45 @@
+/* Bootstrap-first: keep only small app-specific tweaks */
+
+.toast{
+  position:fixed;
+  right:14px;
+  bottom:14px;
+  max-width: 520px;
+  background: rgba(33, 37, 41, 0.92);
+  color:#fff;
+  border-radius: 12px;
+  padding:10px 12px;
+  display:none;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.14);
+  z-index: 1080;
+}
+
+.rsc-level{
+  border:1px solid rgba(0,0,0,.08);
+  border-radius: 12px;
+  overflow:hidden;
+}
+
+.rsc-subitem{
+  border:1px solid rgba(0,0,0,.08);
+  border-radius: 12px;
+  padding:12px;
+  background: #fff;
+}
+
+.rsc-file-name{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  max-width: 320px;
+}
+
+/* Make the right summary card follow scroll (desktop). */
+@media (min-width: 992px) {
+  .rsc-sticky-summary{
+    position: sticky;
+    top: 72px; /* below sticky navbar */
+  }
+}
+
